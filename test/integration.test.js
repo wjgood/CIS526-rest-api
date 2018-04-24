@@ -78,11 +78,11 @@ test('GET /courses/:id should return specified class', function(done){
 });
 
 // TEST Update functions
-test('POST /courses/:id should update specified class', function(done){
+test('PUT /courses/:id should update specified class', function(done){
   const editedEntry = {name: "Too Far"};
   request({
     url: HOST + '/courses/two',
-    method: 'POST',
+    method: 'PUT',
     json: editedEntry
   }, function(error, response, body){
     expect(error).toBeNull();

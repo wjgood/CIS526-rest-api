@@ -22,7 +22,7 @@ function handleRequest(req, res) {
   */
 function load(filename) {
   datafile = filename;
-  var data = fs.readFileSync(filename, {encoding: "utf-8"});
+  var data = JSON.parse(fs.readFileSync(filename, {encoding: "utf-8"}));
 }
 
 /** @function save

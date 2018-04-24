@@ -9,6 +9,8 @@ var server = http.createServer(api.handleRequest);
 /** @function start
   * Starts the server
   * @param {integer} port - the port to listen on
+  * @param {string} datafile - the path to the database file
+  * @param {function} callback - an optional callback invoked when the server starts
   */
 function start(port, datafile, callback) {
   apiInstance = api.load(datafile);
