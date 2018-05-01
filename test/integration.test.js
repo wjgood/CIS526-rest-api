@@ -42,7 +42,7 @@ afterEach(function() {
 
 // TEST Create functions
 test('POST /courses should create a new class in DB', function(done){
-  const createdEntry = {name: "four"};
+  const createdEntry = {name: "four 4"};
   request({
     url: HOST + '/courses',
     method: 'POST',
@@ -54,7 +54,7 @@ test('POST /courses should create a new class in DB', function(done){
       // clone the DATA constant
       var newDATA = JSON.parse(JSON.stringify(DATA));
       // Add the new class
-      newDATA["courses"]["four"] = createdEntry;
+      newDATA["courses"]["four4"] = createdEntry;
       expect(data).toEqual(JSON.stringify(newDATA));
       done();
     });
@@ -74,6 +74,7 @@ test('GET /courses/:id should return specified class', function(done){
   request(HOST + '/courses/one', function(error, response, body){
     expect(error).toBeNull();
     expect(body).toEqual(JSON.stringify(DATA["courses"]["one"]));
+    done();
   });
 });
 
